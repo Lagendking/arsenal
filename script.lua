@@ -3,6 +3,7 @@ local htc = Color3.fromRGB(255, 0, 0) -- esp color
 local rainbow = false -- rainbow esp
 local uis = game:GetService("UserInputService")
 local rs = game:GetService("RunService")
+local ts = game:GetService("TweenService")
 local aimbot = false
 local aimkey = "E" -- key for aimbot
 local aimpart = "Hitbox" -- part to aim for
@@ -157,8 +158,12 @@ ImageLabel.BackgroundTransparency = 1
 ImageLabel.Size = UDim2.new(0, 100, 0, 100)
 ImageLabel.Image = "http://www.roblox.com/asset/?id=10188534088"
 
+local imgc = Instance.new("UICorner")
+imgc.CornerRadius = UDim.new(0, 10)
+imgc.Parent = ImageLabel
+
 OuterFrame.Name = "OuterFrame"
-OuterFrame.Parent = Design
+OuterFrame.Parent = ImageLabel
 OuterFrame.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
 OuterFrame.Position = UDim2.new(0.00666666683, 0, 0.0161527172, 0)
 OuterFrame.Size = UDim2.new(0, 432, 0, 237)
@@ -184,7 +189,7 @@ function sizescale(gui, goal, ttc)
         goal,
         Enum.EasingDirection.In,
         Enum.EasingStyle.Linear,
-        1,
+        1.5,
         true
     )
 end
@@ -193,15 +198,16 @@ IconFrame:TweenPosition(
     OuterFrame.Position,
     Enum.EasingDirection.In,
     Enum.EasingStyle.Linear,
-    2,
+    1.5,
     true
 )
 
---sizescale(IconFrame, OuterFrame.Size, 2)
-sizescale(ImageLabel, OuterFrame.Size, 2)
-wait(1)
+sizescale(ImageLabel, OuterFrame.Size, 1.5)
+wait(2)
+
+local tween = ts:Create(ImageLabel, TweenInfo.new(1), {Transparency = 1, ImageTransparency = 1})
+tween:Play()
 OuterFrame.Visible = true
-IconFrame.Visible = false
 
 UICorner_4.CornerRadius = UDim.new(0, 10)
 UICorner_4.Parent = OuterFrame
