@@ -9,8 +9,8 @@ local aimpart = "Hitbox" -- part to aim for
 local duration, alpha = 1, 0 -- duration
 local smoothness = 0.25 -- smoothness of aim 
 local wallbang = true
-local maxDistance = 400
-local nearestDistance = 401
+local maxDistance = 400 -- distance for aimbot
+local nearestDistance = 401 
 local nearestPlayer = ""
 local Camera = workspace.CurrentCamera
 local dragging
@@ -19,7 +19,7 @@ local dragStart
 local startPos
 local lastMousePos
 local lastGoalPos
-local DRAG_SPEED = (15); -- // The speed of the UI darg.
+local DRAG_SPEED = (15); -- The speed of the drag.
 
 function Lerp(a, b, m)
 	return a + (b - a) * m
@@ -82,8 +82,6 @@ local UICorner_17 = Instance.new("UICorner")
 local ImageButton_5 = Instance.new("ImageButton")
 local miscFrame = Instance.new("Frame")
 
---Properties:
-
 Design.Name = "Design"
 Design.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -134,7 +132,7 @@ Start.TextWrapped = true
 Start.Visible = true
 
 local i = 5
-while i > 0 do
+while i > 0 do -- Thanks timer
     wait(1)
     i = i - 1
     Start.Text = "Script will start in".. "(".. i.. ")"
@@ -192,11 +190,12 @@ IconFrame:TweenPosition(
     OuterFrame.Position,
     Enum.EasingDirection.In,
     Enum.EasingStyle.Linear,
-    2,
+    1.5,
     true
 )
 
-sizescale(IconFrame, OuterFrame.Size, 2)
+sizescale(IconFrame, OuterFrame.Size, 1.5)
+sizescale(ImageLabel, OuterFrame.Size, 1.5)
 wait(1)
 OuterFrame.Visible = true
 IconFrame.Visible = false
