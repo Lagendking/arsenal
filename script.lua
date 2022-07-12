@@ -148,7 +148,6 @@ IconFrame.Parent = Design
 IconFrame.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
 IconFrame.Position = UDim2.new(0.448577672, 0, 0.437591791, 0)
 IconFrame.Size = UDim2.new(0, 100, 0, 100)
-IconFrame.BackgroundTransparency = 1
 
 UICorner_3.CornerRadius = UDim.new(0, 10)
 UICorner_3.Parent = IconFrame
