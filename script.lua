@@ -209,6 +209,7 @@ wait(2)
 local tween = ts:Create(ImageLabel, TweenInfo.new(1), {Transparency = 1, ImageTransparency = 1})
 tween:Play()
 OuterFrame.Visible = true
+IconFrame.Visible = false
 
 UICorner_4.CornerRadius = UDim.new(0, 10)
 UICorner_4.Parent = OuterFrame
