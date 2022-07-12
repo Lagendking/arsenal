@@ -9,8 +9,8 @@ local aimpart = "Hitbox" -- part to aim for
 local duration, alpha = 1, 0 -- duration
 local smoothness = 0.25 -- smoothness of aim 
 local wallbang = true
-local maxDistance = 400 -- distance for aimbot
-local nearestDistance = 401 
+local maxDistance = 400
+local nearestDistance = 401
 local nearestPlayer = ""
 local Camera = workspace.CurrentCamera
 local dragging
@@ -19,7 +19,7 @@ local dragStart
 local startPos
 local lastMousePos
 local lastGoalPos
-local DRAG_SPEED = (15); -- The speed of the drag.
+local DRAG_SPEED = (15); -- // The speed of the UI darg.
 
 function Lerp(a, b, m)
 	return a + (b - a) * m
@@ -82,9 +82,12 @@ local UICorner_17 = Instance.new("UICorner")
 local ImageButton_5 = Instance.new("ImageButton")
 local miscFrame = Instance.new("Frame")
 
+--Properties:
+
 Design.Name = "Design"
 Design.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Design.DisplayOrder = 100
 
 WelcomeOF.Name = "WelcomeOF"
 WelcomeOF.Parent = Design
@@ -132,7 +135,7 @@ Start.TextWrapped = true
 Start.Visible = true
 
 local i = 5
-while i > 0 do -- Thanks timer
+while i > 0 do
     wait(1)
     i = i - 1
     Start.Text = "Script will start in".. "(".. i.. ")"
@@ -152,7 +155,7 @@ ImageLabel.Parent = IconFrame
 ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BackgroundTransparency = 1
 ImageLabel.Size = UDim2.new(0, 100, 0, 100)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=10188556406"
+ImageLabel.Image = "http://www.roblox.com/asset/?id=10188534088"
 
 OuterFrame.Name = "OuterFrame"
 OuterFrame.Parent = Design
@@ -190,12 +193,12 @@ IconFrame:TweenPosition(
     OuterFrame.Position,
     Enum.EasingDirection.In,
     Enum.EasingStyle.Linear,
-    1.5,
+    2,
     true
 )
 
-sizescale(IconFrame, OuterFrame.Size, 1.5)
-sizescale(ImageLabel, OuterFrame.Size, 1.5)
+--sizescale(IconFrame, OuterFrame.Size, 2)
+sizescale(ImageLabel, OuterFrame.Size, 2)
 wait(1)
 OuterFrame.Visible = true
 IconFrame.Visible = false
