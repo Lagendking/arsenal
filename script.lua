@@ -164,7 +164,7 @@ imgc.CornerRadius = UDim.new(0, 10)
 imgc.Parent = ImageLabel
 
 OuterFrame.Name = "OuterFrame"
-OuterFrame.Parent = ImageLabel
+OuterFrame.Parent = Design
 OuterFrame.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
 OuterFrame.Position = UDim2.new(0.00666666683, 0, 0.0161527172, 0)
 OuterFrame.Size = UDim2.new(0, 432, 0, 237)
